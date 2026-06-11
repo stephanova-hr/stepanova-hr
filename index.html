@@ -6,9 +6,6 @@
 
 <title>СтепановаHR | Подбор персонала по всей России</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -25,8 +22,8 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Inter',sans-serif;
-background:#ffffff;
-color:#111111;
+background: radial-gradient(circle at top, #ffffff 0%, #f6f7fb 100%);
+color:#111;
 line-height:1.6;
 }
 
@@ -36,13 +33,15 @@ max-width:1200px;
 margin:auto;
 }
 
+/* HEADER */
 header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-background:#fff;
-border-bottom:1px solid #eeeeee;
+background:rgba(255,255,255,0.85);
+backdrop-filter: blur(12px);
+border-bottom:1px solid rgba(0,0,0,0.06);
 z-index:999;
 }
 
@@ -54,17 +53,13 @@ justify-content:space-between;
 }
 
 .logo{
-font-size:28px;
-font-weight:800;
+font-size:30px;
+font-weight:900;
+letter-spacing:-0.5px;
 }
 
-.logo-black{
-color:#111111;
-}
-
-.logo-red{
-color:#E53935;
-}
+.logo-black{color:#111;}
+.logo-red{color:#E53935;}
 
 .nav-right{
 display:flex;
@@ -74,19 +69,25 @@ gap:25px;
 
 .phone{
 font-weight:600;
-color:#111;
 text-decoration:none;
+color:#111;
 }
 
 .btn-header{
 background:#E53935;
 color:white;
 padding:12px 20px;
-border-radius:10px;
+border-radius:12px;
 text-decoration:none;
 font-weight:600;
+transition:0.3s;
 }
 
+.btn-header:hover{
+transform:translateY(-2px);
+}
+
+/* HERO */
 .hero{
 padding-top:140px;
 padding-bottom:100px;
@@ -94,7 +95,7 @@ padding-bottom:100px;
 
 .hero-grid{
 display:grid;
-grid-template-columns:1fr 520px;
+grid-template-columns:1fr 1fr;
 gap:60px;
 align-items:center;
 }
@@ -107,25 +108,23 @@ font-weight:500;
 }
 
 .hero h1{
-font-size:62px;
+font-size:64px;
 line-height:1.05;
 font-weight:800;
-margin-bottom:25px;
+letter-spacing:-1px;
+margin-bottom:20px;
 }
 
 .hero-description{
-font-size:22px;
+font-size:20px;
 color:#555;
-margin-bottom:30px;
-}
-
-.checks{
-margin-bottom:35px;
+max-width:600px;
+margin-bottom:25px;
 }
 
 .check{
-margin-bottom:12px;
-font-size:18px;
+margin-bottom:10px;
+font-size:17px;
 }
 
 .check::before{
@@ -134,20 +133,27 @@ color:#E53935;
 font-weight:bold;
 }
 
+/* BUTTONS */
 .hero-buttons{
 display:flex;
 flex-wrap:wrap;
 gap:15px;
-margin-bottom:30px;
+margin-top:25px;
 }
 
 .btn-main{
-background:#E53935;
+background:linear-gradient(135deg,#E53935,#ff5a5f);
 color:white;
 padding:18px 30px;
-border-radius:12px;
+border-radius:14px;
 text-decoration:none;
 font-weight:700;
+box-shadow:0 10px 25px rgba(229,57,53,0.25);
+transition:0.3s;
+}
+
+.btn-main:hover{
+transform:translateY(-3px);
 }
 
 .btn-whatsapp{
@@ -168,35 +174,22 @@ text-decoration:none;
 font-weight:700;
 }
 
-.contact-line{
-font-size:20px;
-font-weight:600;
-}
-
+/* PHOTO */
 .photo-box{
 background:#f5f5f5;
 border-radius:30px;
 overflow:hidden;
-min-height:700px;
+min-height:650px;
 display:flex;
 align-items:center;
 justify-content:center;
+border:1px solid rgba(0,0,0,0.05);
 }
 
-.photo-box img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.photo-placeholder{
-padding:50px;
-text-align:center;
-color:#777;
-}
-
+/* SECTIONS */
 section{
 padding:100px 0;
+scroll-margin-top:100px;
 }
 
 .section-gray{
@@ -204,10 +197,11 @@ background:#f7f7f7;
 }
 
 .section-title{
-font-size:48px;
+font-size:46px;
 font-weight:800;
 text-align:center;
 margin-bottom:25px;
+letter-spacing:-0.5px;
 }
 
 .section-subtitle{
@@ -215,29 +209,73 @@ text-align:center;
 max-width:800px;
 margin:0 auto 60px;
 color:#666;
-font-size:20px;
+font-size:19px;
 }
 
+/* CARDS */
 .cards{
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
 .card{
-background:white;
+background:rgba(255,255,255,0.9);
 padding:35px;
 border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
+box-shadow:0 10px 40px rgba(0,0,0,0.06);
+border:1px solid rgba(0,0,0,0.05);
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 60px rgba(0,0,0,0.10);
 }
 
 .card h3{
-margin-bottom:15px;
+margin-bottom:12px;
 font-size:22px;
 }
 
 .card p{
 color:#666;
+}
+
+/* FORM */
+form input, form textarea{
+width:100%;
+padding:18px;
+border:1px solid #ddd;
+border-radius:12px;
+margin-bottom:15px;
+font-family:inherit;
+}
+
+form button{
+width:100%;
+padding:18px;
+background:#E53935;
+color:white;
+border:none;
+border-radius:12px;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+form button:hover{
+transform:translateY(-3px);
+}
+
+/* FOOTER */
+footer{
+background:#111;
+padding:60px 0;
+color:white;
+text-align:center;
 }
 
 @media(max-width:991px){
@@ -247,23 +285,11 @@ grid-template-columns:1fr;
 }
 
 .hero h1{
-font-size:42px;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-.photo-box{
-min-height:450px;
+font-size:40px;
 }
 
 .nav-right{
 display:none;
-}
-
-.section-title{
-font-size:34px;
 }
 
 }
@@ -274,7 +300,6 @@ font-size:34px;
 <body>
 
 <header>
-
 <div class="container nav">
 
 <div class="logo">
@@ -282,568 +307,113 @@ font-size:34px;
 </div>
 
 <div class="nav-right">
-
-<a class="phone" href="tel:+79274350088">
-+7 (927) 435-00-88
-</a>
-
-<a class="btn-header" href="#contact">
-Получить консультацию
-</a>
-
+<a class="phone" href="tel:+79274350088">+7 (927) 435-00-88</a>
+<a class="btn-header" href="#contact">Консультация</a>
 </div>
 
 </div>
-
 </header>
 
 <section class="hero">
-
 <div class="container">
-
 <div class="hero-grid">
 
 <div>
 
-<div class="pretitle">
-Внешний HR-менеджер для малого и среднего бизнеса
-</div>
+<div class="pretitle">Внешний HR-менеджер для бизнеса</div>
 
-<h1>
-Подбор персонала без риска для бизнеса
-</h1>
+<h1>Закрываю вакансии за 3–14 дней с гарантией замены</h1>
 
 <div class="hero-description">
-
-Подбираю сотрудников по всей России — от линейного персонала до руководителей высшего звена.
-
-Найду сотрудника, который усилит ваш бизнес, а не создаст новые проблемы.
-
+Подбираю сотрудников по всей России — от линейного персонала до руководителей.
 </div>
 
-<div class="checks">
-
-<div class="check">
-Гарантия 30 дней с бесплатной заменой сотрудника
-</div>
-
-<div class="check">
-Первые кандидаты от 3–5 рабочих дней
-</div>
-
-<div class="check">
-Лично веду каждую вакансию
-</div>
-
-<div class="check">
-Работаю по всей России
-</div>
-
-</div>
+<div class="check">Первые кандидаты через 3–5 дней</div>
+<div class="check">Гарантия замены 30 дней</div>
+<div class="check">Работаю по всей России</div>
 
 <div class="hero-buttons">
-
-<a href="#contact" class="btn-main">
-Получить консультацию бесплатно
-</a>
-
-<a href="https://wa.me/79274350088" class="btn-whatsapp">
-WhatsApp
-</a>
-
-<a href="https://t.me/al1615" class="btn-telegram">
-Telegram
-</a>
-
-</div>
-
-<div class="contact-line">
-☎ +7 (927) 435-00-88
+<a href="#contact" class="btn-main">Получить консультацию</a>
+<a href="https://wa.me/79274350088" class="btn-whatsapp">WhatsApp</a>
+<a href="https://t.me/al1615" class="btn-telegram">Telegram</a>
 </div>
 
 </div>
 
 <div class="photo-box">
-
-<div class="photo-placeholder">
-
-ЗДЕСЬ БУДЕТ ВАШЕ ФОТО
-
-<br><br>
-
-После публикации сайта заменим этот блок на фотографию Алены Степановой.
-
+<div style="color:#777;text-align:center;padding:40px;">
+Здесь будет фото<br><br>Алены Степановой
+</div>
 </div>
 
 </div>
-
 </div>
-
-</div>
-
 </section>
-<!-- ЭКРАН 2 -->
 
 <section class="section-gray">
-
 <div class="container">
 
-<h2 class="section-title">
-Почему компании доверяют подбор мне
-</h2>
-
-<div class="section-subtitle">
-
-Каждую вакансию я веду лично — от получения заявки до выхода сотрудника на работу.
-
-В отличие от кадровых агентств вы общаетесь напрямую со специалистом, который отвечает за результат.
-
-</div>
+<h2 class="section-title">Почему выбирают меня</h2>
+<div class="section-subtitle">Личный подбор и гарантия результата</div>
 
 <div class="cards">
 
 <div class="card">
-
-<h3>
-Подбор любого уровня
-</h3>
-
-<p>
-От рабочих специальностей до топ-менеджеров и руководителей компаний.
-</p>
-
+<h3>Подбор любого уровня</h3>
+<p>От рабочих до топ-менеджеров.</p>
 </div>
 
 <div class="card">
-
-<h3>
-Личный подход
-</h3>
-
-<p>
-Погружаюсь в задачи бизнеса и подбираю сотрудников под конкретные цели компании.
-</p>
-
+<h3>Личный подход</h3>
+<p>Каждая вакансия ведётся мной лично.</p>
 </div>
 
 <div class="card">
-
-<h3>
-Гарантия замены
-</h3>
-
-<p>
-Если сотрудник не подойдет, бесплатно подберу замену в течение 30 дней.
-</p>
-
+<h3>Гарантия</h3>
+<p>Бесплатная замена в течение 30 дней.</p>
 </div>
 
 <div class="card">
-
-<h3>
-Поиск по всей России
-</h3>
-
-<p>
-Подбираю кандидатов независимо от региона и сферы деятельности.
-</p>
-
+<h3>По всей России</h3>
+<p>Работаю без ограничений по регионам.</p>
 </div>
 
 </div>
 
 </div>
-
 </section>
-
-<!-- ЭКРАН 3 -->
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">
-Кого я подбираю
-</h2>
-
-<div class="section-subtitle">
-
-Закрываю вакансии любого уровня сложности для малого, среднего и крупного бизнеса.
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>
-Рабочие специальности
-</h3>
-
-<p>
-Сварщики, монтажники, электрики, операторы, водители, комплектовщики.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Производство
-</h3>
-
-<p>
-Технологи, инженеры, мастера смен, начальники участков.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Строительство
-</h3>
-
-<p>
-Прорабы, инженеры ПТО, руководители строительных проектов.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Продажи
-</h3>
-
-<p>
-Менеджеры по продажам, руководители отделов продаж, коммерческие директора.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Офисный персонал
-</h3>
-
-<p>
-Бухгалтеры, юристы, HR-специалисты, помощники руководителей.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Руководители
-</h3>
-
-<p>
-Генеральные директора, операционные директора, директора по развитию.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ЭКРАН 4 -->
-
-<section class="section-gray">
-
-<div class="container">
-
-<h2 class="section-title">
-Как проходит подбор персонала
-</h2>
-
-<div class="section-subtitle">
-
-Прозрачный процесс работы с понятными этапами и постоянной обратной связью.
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-<h3>01</h3>
-<p>
-Знакомство и обсуждение вакансии.
-</p>
-</div>
-
-<div class="card">
-<h3>02</h3>
-<p>
-Формирование профиля идеального кандидата.
-</p>
-</div>
-
-<div class="card">
-<h3>03</h3>
-<p>
-Поиск по всем доступным каналам.
-</p>
-</div>
-
-<div class="card">
-<h3>04</h3>
-<p>
-Проведение интервью и оценка кандидатов.
-</p>
-</div>
-
-<div class="card">
-<h3>05</h3>
-<p>
-Представление лучших кандидатов работодателю.
-</p>
-</div>
-
-<div class="card">
-<h3>06</h3>
-<p>
-Сопровождение выхода сотрудника на работу.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- ЭКРАН 5 -->
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">
-Обо мне
-</h2>
-
-<div style="max-width:900px;margin:auto;text-align:center;font-size:20px;line-height:1.8;color:#555;">
-
-<p>
-
-Меня зовут <strong>Алена Степанова</strong>.
-
-</p>
-
-<p>
-
-Я занимаюсь подбором персонала для любого бизнеса по всей России.
-
-Помогаю компаниям находить сотрудников от линейного персонала до руководителей высшего звена.
-
-</p>
-
-<p>
-
-Моя задача — не просто закрыть вакансию, а найти человека, который принесёт результат бизнесу.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ЭКРАН 6 -->
-
-<section class="section-gray">
-
-<div class="container">
-
-<h2 class="section-title">
-Почему бизнесу выгодно работать со мной
-</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Экономия времени</h3>
-<p>Беру на себя поиск, отбор и первичные интервью кандидатов.</p>
-</div>
-
-<div class="card">
-<h3>Снижение риска ошибки</h3>
-<p>Проверяю опыт, мотивацию и соответствие требованиям вакансии.</p>
-</div>
-
-<div class="card">
-<h3>Быстрый поиск</h3>
-<p>Первые кандидаты обычно появляются уже через 3–5 рабочих дней.</p>
-</div>
-
-<div class="card">
-<h3>Гарантия замены</h3>
-<p>Если сотрудник не подошёл — бесплатно подберу замену.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ЭКРАН 7 -->
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">
-Примеры закрытых вакансий
-</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Руководитель отдела продаж</h3>
-<p>Срок закрытия вакансии — 12 дней.</p>
-</div>
-
-<div class="card">
-<h3>Главный инженер</h3>
-<p>Срок закрытия вакансии — 14 дней.</p>
-</div>
-
-<div class="card">
-<h3>Инженер ПТО</h3>
-<p>Срок закрытия вакансии — 9 дней.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ЭКРАН 8 -->
-
-<section class="section-gray">
-
-<div class="container">
-
-<h2 class="section-title">
-Часто задаваемые вопросы
-</h2>
-
-<div style="max-width:900px;margin:auto;">
-
-<div class="card" style="margin-bottom:20px;">
-<h3>Если сотрудник не подошёл?</h3>
-<p>Действует гарантия 30 дней с бесплатной заменой сотрудника.</p>
-</div>
-
-<div class="card" style="margin-bottom:20px;">
-<h3>С какими регионами вы работаете?</h3>
-<p>Работаю по всей территории России.</p>
-</div>
-
-<div class="card" style="margin-bottom:20px;">
-<h3>Какие вакансии закрываете?</h3>
-<p>От линейного персонала до руководителей высшего звена.</p>
-</div>
-
-<div class="card">
-<h3>Через сколько будут первые кандидаты?</h3>
-<p>Обычно от 3 до 5 рабочих дней после старта работы.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ЭКРАН 9 -->
 
 <section id="contact">
-
 <div class="container">
 
-<h2 class="section-title">
-Получить консультацию бесплатно
-</h2>
-
-<div class="section-subtitle">
-
-Расскажите о вакансии и я свяжусь с вами для обсуждения задачи.
-
-</div>
-
-<div style="max-width:650px;margin:auto;">
+<h2 class="section-title">Оставить заявку</h2>
+<div class="section-subtitle">Расскажите о вакансии</div>
 
 <form>
 
-<input
-type="text"
-placeholder="Ваше имя"
-style="width:100%;padding:18px;border:1px solid #ddd;border-radius:12px;margin-bottom:15px;"
->
+<input type="text" placeholder="Ваше имя" required>
+<input type="tel" placeholder="Телефон" required>
+<textarea placeholder="Описание вакансии" rows="5"></textarea>
 
-<input
-type="tel"
-placeholder="Телефон"
-style="width:100%;padding:18px;border:1px solid #ddd;border-radius:12px;margin-bottom:15px;"
->
-
-<textarea
-placeholder="Какая вакансия открыта?"
-style="width:100%;padding:18px;border:1px solid #ddd;border-radius:12px;height:150px;margin-bottom:15px;"
-></textarea>
-
-<button
-type="button"
-style="width:100%;padding:18px;background:#E53935;color:white;border:none;border-radius:12px;font-size:18px;font-weight:700;"
->
-Получить консультацию
-</button>
+<button type="submit">Отправить заявку</button>
 
 </form>
 
 </div>
-
-</div>
-
 </section>
 
-<footer style="background:#111;padding:60px 0;color:white;text-align:center;">
-
+<footer>
 <div class="container">
 
-<div style="font-size:34px;font-weight:800;margin-bottom:20px;">
-
-<span style="color:white;">Степанова</span><span style="color:#E53935;">HR</span>
-
+<div style="font-size:30px;font-weight:800;margin-bottom:15px;">
+СтепановаHR
 </div>
 
-<p style="margin-bottom:15px;">
-Внешний HR-менеджер для малого и среднего бизнеса
-</p>
-
-<p style="margin-bottom:15px;">
-☎ +7 (927) 435-00-88
-</p>
-
-<p style="margin-bottom:15px;">
-Telegram: @al1615
-</p>
-
-<p>
-Работаю по всей России
-</p>
+<p>Подбор персонала по всей России</p>
+<p>+7 (927) 435-00-88</p>
+<p>Telegram: @al1615</p>
 
 </div>
-
 </footer>
 
 </body>
