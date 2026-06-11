@@ -3,32 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Степанова HR | Подбор персонала</title>
+
+<title>СтепановаHR | Подбор персонала по всей России</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Inter, sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
+font-family:'Inter',sans-serif;
 background:#ffffff;
-color:#111;
+color:#111111;
 line-height:1.6;
-}
-
-/* HEADER */
-header{
-border-bottom:1px solid #eee;
-padding:18px 0;
-position:sticky;
-top:0;
-background:white;
-z-index:10;
 }
 
 .container{
@@ -37,275 +36,349 @@ max-width:1200px;
 margin:auto;
 }
 
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#fff;
+border-bottom:1px solid #eeeeee;
+z-index:999;
+}
+
 .nav{
+height:80px;
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 }
 
 .logo{
+font-size:28px;
 font-weight:800;
-font-size:22px;
+}
+
+.logo-black{
+color:#111111;
+}
+
+.logo-red{
+color:#E53935;
+}
+
+.nav-right{
+display:flex;
+align-items:center;
+gap:25px;
 }
 
 .phone{
 font-weight:600;
 color:#111;
+text-decoration:none;
 }
 
-/* HERO */
-.hero{
-padding:90px 0;
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 420px;
-gap:60px;
-align-items:center;
-}
-
-h1{
-font-size:52px;
-line-height:1.1;
-margin-bottom:20px;
-}
-
-.red{
-color:#e30613;
-}
-
-p{
-color:#444;
-font-size:18px;
-margin-bottom:25px;
-}
-
-.badges{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-bottom:25px;
-}
-
-.badge{
-background:#f5f5f5;
-padding:10px 14px;
-border-radius:10px;
-font-size:14px;
-}
-
-/* BUTTON */
-.btn{
-display:inline-block;
-background:#e30613;
+.btn-header{
+background:#E53935;
 color:white;
-padding:14px 22px;
+padding:12px 20px;
 border-radius:10px;
 text-decoration:none;
 font-weight:600;
 }
 
-/* FORM */
-.form{
-background:#f7f7f7;
-padding:25px;
-border-radius:15px;
+.hero{
+padding-top:140px;
+padding-bottom:100px;
 }
 
-input, textarea{
-width:100%;
-padding:12px;
-margin-bottom:10px;
-border:1px solid #ddd;
-border-radius:8px;
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 520px;
+gap:60px;
+align-items:center;
 }
 
-button{
-width:100%;
-padding:14px;
-background:#111;
+.pretitle{
+font-size:18px;
+color:#666;
+margin-bottom:15px;
+font-weight:500;
+}
+
+.hero h1{
+font-size:62px;
+line-height:1.05;
+font-weight:800;
+margin-bottom:25px;
+}
+
+.hero-description{
+font-size:22px;
+color:#555;
+margin-bottom:30px;
+}
+
+.checks{
+margin-bottom:35px;
+}
+
+.check{
+margin-bottom:12px;
+font-size:18px;
+}
+
+.check::before{
+content:"✓ ";
+color:#E53935;
+font-weight:bold;
+}
+
+.hero-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+margin-bottom:30px;
+}
+
+.btn-main{
+background:#E53935;
 color:white;
-border:none;
-border-radius:8px;
+padding:18px 30px;
+border-radius:12px;
+text-decoration:none;
+font-weight:700;
+}
+
+.btn-whatsapp{
+background:#25D366;
+color:white;
+padding:18px 25px;
+border-radius:12px;
+text-decoration:none;
+font-weight:700;
+}
+
+.btn-telegram{
+background:#229ED9;
+color:white;
+padding:18px 25px;
+border-radius:12px;
+text-decoration:none;
+font-weight:700;
+}
+
+.contact-line{
+font-size:20px;
 font-weight:600;
 }
 
-/* SECTIONS */
-section{
-padding:80px 0;
+.photo-box{
+background:#f5f5f5;
+border-radius:30px;
+overflow:hidden;
+min-height:700px;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
-.title{
-font-size:36px;
+.photo-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.photo-placeholder{
+padding:50px;
 text-align:center;
-margin-bottom:40px;
-}
-
-/* STATS */
-.stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-}
-
-.stat{
-background:#f7f7f7;
-padding:25px;
-text-align:center;
-border-radius:12px;
-}
-
-.stat b{
-font-size:30px;
-display:block;
-}
-
-/* CARDS */
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-
-.card{
-border:1px solid #eee;
-padding:20px;
-border-radius:12px;
-}
-
-.card h3{
-margin-bottom:10px;
-}
-
-/* CTA */
-.cta{
-background:#111;
-color:white;
-text-align:center;
-padding:90px 0;
-}
-
-.cta h2{
-font-size:40px;
-margin-bottom:15px;
-}
-
-.cta .btn{
-margin-top:20px;
-}
-
-/* FOOTER */
-footer{
-padding:40px 0;
-text-align:center;
-border-top:1px solid #eee;
 color:#777;
 }
 
-/* MOBILE */
-@media(max-width:900px){
+section{
+padding:100px 0;
+}
+
+.section-gray{
+background:#f7f7f7;
+}
+
+.section-title{
+font-size:48px;
+font-weight:800;
+text-align:center;
+margin-bottom:25px;
+}
+
+.section-subtitle{
+text-align:center;
+max-width:800px;
+margin:0 auto 60px;
+color:#666;
+font-size:20px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.card h3{
+margin-bottom:15px;
+font-size:22px;
+}
+
+.card p{
+color:#666;
+}
+
+@media(max-width:991px){
+
 .hero-grid{
 grid-template-columns:1fr;
 }
 
-.stats{
-grid-template-columns:1fr 1fr;
+.hero h1{
+font-size:42px;
 }
 
 .cards{
 grid-template-columns:1fr;
 }
 
-h1{
+.photo-box{
+min-height:450px;
+}
+
+.nav-right{
+display:none;
+}
+
+.section-title{
 font-size:34px;
 }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <div class="container nav">
-<div class="logo">Степанова HR</div>
-<div class="phone">+7 927 435 00 88</div>
+
+<div class="logo">
+<span class="logo-black">Степанова</span><span class="logo-red">HR</span>
 </div>
+
+<div class="nav-right">
+
+<a class="phone" href="tel:+79274350088">
++7 (927) 435-00-88
+</a>
+
+<a class="btn-header" href="#contact">
+Получить консультацию
+</a>
+
+</div>
+
+</div>
+
 </header>
 
 <section class="hero">
+
 <div class="container">
+
 <div class="hero-grid">
 
 <div>
-<h1>Подбор персонала <span class="red">для бизнеса</span> по всей России</h1>
 
-<p>
-Подбираем сотрудников всех категорий — от рабочих специальностей до топ-менеджеров.
-</p>
-
-<div class="badges">
-<div class="badge">Работаем по всей России</div>
-<div class="badge">Гарантия замены 30 дней</div>
-<div class="badge">Проверка кандидатов</div>
-<div class="badge">Первые кандидаты от 3 дней</div>
+<div class="pretitle">
+Внешний HR-менеджер для малого и среднего бизнеса
 </div>
 
-<a href="#form" class="btn">Получить консультацию бесплатно</a>
+<h1>
+Подбор персонала без риска для бизнеса
+</h1>
+
+<div class="hero-description">
+
+Подбираю сотрудников по всей России — от линейного персонала до руководителей высшего звена.
+
+Найду сотрудника, который усилит ваш бизнес, а не создаст новые проблемы.
+
 </div>
 
-<div class="form" id="form">
-<h3>Оставить заявку</h3>
-<input placeholder="Ваше имя">
-<input placeholder="Телефон">
-<textarea placeholder="Какая вакансия?"></textarea>
-<button>Получить консультацию</button>
+<div class="checks">
+
+<div class="check">
+Гарантия 30 дней с бесплатной заменой сотрудника
+</div>
+
+<div class="check">
+Первые кандидаты от 3–5 рабочих дней
+</div>
+
+<div class="check">
+Лично веду каждую вакансию
+</div>
+
+<div class="check">
+Работаю по всей России
 </div>
 
 </div>
+
+<div class="hero-buttons">
+
+<a href="#contact" class="btn-main">
+Получить консультацию бесплатно
+</a>
+
+<a href="https://wa.me/79274350088" class="btn-whatsapp">
+WhatsApp
+</a>
+
+<a href="https://t.me/al1615" class="btn-telegram">
+Telegram
+</a>
+
 </div>
+
+<div class="contact-line">
+☎ +7 (927) 435-00-88
+</div>
+
+</div>
+
+<div class="photo-box">
+
+<div class="photo-placeholder">
+
+ЗДЕСЬ БУДЕТ ВАШЕ ФОТО
+
+<br><br>
+
+После публикации сайта заменим этот блок на фотографию Алены Степановой.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
-
-<section>
-<div class="container">
-<div class="title">Степанова HR в цифрах</div>
-
-<div class="stats">
-<div class="stat"><b>500+</b> вакансий</div>
-<div class="stat"><b>50+</b> отраслей</div>
-<div class="stat"><b>90%</b> успешных выходов</div>
-<div class="stat"><b>3-5</b> дней до кандидатов</div>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<div class="title">Кого мы подбираем</div>
-
-<div class="cards">
-<div class="card"><h3>Рабочие</h3>Сварщики, водители, монтажники</div>
-<div class="card"><h3>Офис</h3>Бухгалтеры, HR, ассистенты</div>
-<div class="card"><h3>Продажи</h3>Менеджеры, РОПы</div>
-<div class="card"><h3>Строительство</h3>Прорабы, инженеры</div>
-<div class="card"><h3>Производство</h3>Технологи, мастера</div>
-<div class="card"><h3>Топ</h3>Директора, руководители</div>
-</div>
-</div>
-</section>
-
-<section class="cta">
-<div class="container">
-<h2>Найдём сотрудника для вашего бизнеса</h2>
-<p>Оставьте заявку и мы свяжемся с вами</p>
-<a class="btn" href="tel:+79274350088">Позвонить</a>
-</div>
-</section>
-
-<footer>
-Степанова HR | Подбор персонала по всей России<br>
-+7 927 435 00 88
-</footer>
-
-</body>
-</html>
